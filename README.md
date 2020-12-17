@@ -1,6 +1,6 @@
 # jsO2D
 
-Often when using HTTP requests to fetch information within HTML, I find that the information I'm looking for is actually buried deep in the JS of <script> element, which was intended to be rendered by a web browser to compose the finished HTML.
+Often when using HTTP requests to fetch information within HTML, I find that the information I'm looking for is actually buried deep in the JS of a <script> element, which was intended to be rendered by a web browser to compose the finished HTML.
 
 This makes the information significantly more difficult to parse out than if it was accessible in ordinary HTML elements by CSS Selectors.
 
