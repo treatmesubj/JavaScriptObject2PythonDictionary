@@ -4,7 +4,7 @@ Often when using HTTP requests to fetch information within HTML, I find that the
 
 This makes the information significantly more difficult to parse out than if it was accessible in ordinary HTML elements by CSS Selectors.
 
-So, I wrote myself a helper function to parse out object variables from JavaScript, remove their comments so they're valid JSON, and convert them to Python dictionaries so I can feasibly access their information.
+So, I wrote myself a helper Regular Expression function to parse out object variables from JavaScript, remove their comments so they're valid JSON, and convert them to Python dictionaries so I can feasibly access their information.
 
 Use:
 
