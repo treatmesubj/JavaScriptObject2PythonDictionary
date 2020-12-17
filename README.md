@@ -10,7 +10,7 @@ Use:
 
 ```
 """
-pass the JavaScript element's name and its <script> element's text to jsO2D.js_obj_from_script_to_dict
+pass the JavaScript object's name and its <script> element's text to jsO2D.js_obj_from_script_to_dict
 and you have yourself a navigable Python dictionary with little effort
 """
 >>> import requests
