@@ -7,6 +7,7 @@ This makes the information significantly more difficult to parse out than if it 
 So, I wrote myself a helper function to parse out object variables from JavaScript, remove their comments so they're valid JSON, and convert them to Python dictionaries so I can feaibly access their information.
 
 Use:
+
 ```
 """
 pass the JavaScript element's name and its <script> element's text to jsO2D.js_obj_from_script_to_dict
@@ -28,4 +29,18 @@ and you have yourself a navigable Python dictionary with little effort
 >>> print(list(dicty.keys()))
 ['responseContext', 'contents', 'header', 'trackingParams', 'topbar']
 >>>
+```
+
+If you're lazy and don't care about speed, you could just iterate over all your HTML's <script> elements until you find your JS object
+
+```
+>>> for script in soup.find_all("script"):
+...     try:
+...             dicty = jsO2D.js_obj_from_script_to_dict("ytInitialData", script.string)
+...             break
+...     except AttributeError:
+...             pass
+...     except TypeError:
+...             pass
+>>> print(dicty)
 ```
