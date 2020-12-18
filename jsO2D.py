@@ -27,15 +27,20 @@ def js_obj_from_script_to_dict(javascript_object_name, script):
 	return sanjay
 
 
-# def test():
+def demo():
 
-# 	import requests
-# 	from bs4 import BeautifulSoup
+	import requests
+	from bs4 import BeautifulSoup
 
-# 	url = "https://www.youtube.com/feed/storefront"
-# 	response = requests.get(url)
-# 	soup = BeautifulSoup(response.text, 'html.parser')
-# 	pattern = re.compile(r"ytInitialData\s=\s({.*});")
-# 	script_elem = soup.find("script", text=pattern)
-# 	dicty = js_obj_from_script_to_dict("ytInitialData", script_elem.string)
-# 	print(list(dicty.keys()))
+	url = "https://www.youtube.com/feed/storefront"
+	response = requests.get(url)
+	soup = BeautifulSoup(response.text, 'html.parser')
+	for script in soup.find_all("script"):
+		try:
+			dicty = js_obj_from_script_to_dict("ytInitialData", script.string)
+		except AttributeError:
+			pass
+		except TypeError:
+			pass
+
+	print(list(dicty.keys()))
