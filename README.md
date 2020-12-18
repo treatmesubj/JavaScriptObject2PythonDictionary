@@ -22,8 +22,7 @@ and you have yourself a navigable Python dictionary with little effort
 >>> url = "https://www.youtube.com/feed/storefront"
 >>> response = requests.get(url)
 >>> soup = BeautifulSoup(response.text, "html.parser")
->>> pattern = re.compile(r"ytInitialData\s=\s({.*});")
->>> script_elem = soup.find("script", text=pattern)
+>>> script_elem = soup.find("script", text=re.compile("ytInitialData"))
 >>>
 >>> dicty = jsO2D.js_obj_from_script_to_dict("ytInitialData", script_elem.string)
 >>> print(list(dicty.keys()))
