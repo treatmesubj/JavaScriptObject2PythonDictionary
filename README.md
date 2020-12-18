@@ -19,8 +19,7 @@ and you have yourself a navigable Python dictionary with little effort
 >>> import jsO2D
 >>>
 >>>
->>> url = "https://www.youtube.com/feed/storefront"
->>> response = requests.get(url)
+>>> response = requests.get("https://www.youtube.com/feed/storefront")
 >>> soup = BeautifulSoup(response.text, "html.parser")
 >>> script_elem = soup.find("script", text=re.compile("ytInitialData"))
 >>>
