@@ -8,7 +8,7 @@ So, I wrote myself a helper Regular Expression function to parse out object vari
 
 Use:
 
-```
+```python
 """
 pass the JavaScript object's name and its <script> element's text to jsO2D.js_obj_from_script_to_dict
 and you have yourself a navigable Python dictionary with little effort
@@ -33,7 +33,7 @@ and you have yourself a navigable Python dictionary with little effort
 
 If you're lazy and don't care about speed, you could just iterate over all your HTML's <script> elements until you find your JS object
 
-```
+```python
 >>> for script in soup.find_all("script"):
 ...     try:
 ...             dicty = jsO2D.js_obj_from_script_to_dict("ytInitialData", script.string)
