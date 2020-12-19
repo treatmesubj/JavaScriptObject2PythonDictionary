@@ -24,6 +24,7 @@ and you have yourself a navigable Python dictionary with little effort
 >>> script_elem = soup.find("script", text=re.compile("ytInitialData"))
 >>>
 >>> dicty = jsO2D.js_obj_from_script_to_dict("ytInitialData", script_elem.string)
+>>>
 >>> print(list(dicty.keys()))
 ['responseContext', 'contents', 'header', 'trackingParams', 'topbar']
 >>>
